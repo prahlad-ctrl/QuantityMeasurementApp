@@ -80,16 +80,28 @@ public class QuantityMeasurementApp {
 
     public static void main(String[] args) {
 
-        System.out.println(new Quantity(1.0, LengthUnit.FEET)
-                .add(new Quantity(12.0, LengthUnit.INCH)));
-
-        System.out.println(new Quantity(12.0, LengthUnit.INCH)
-                .add(new Quantity(1.0, LengthUnit.FEET)));
+        System.out.println(Quantity.add(
+                new Quantity(1.0, LengthUnit.FEET),
+                new Quantity(12.0, LengthUnit.INCH),
+                LengthUnit.FEET
+        ));
 
         System.out.println(Quantity.add(
-                new Quantity(1.0, LengthUnit.YARD),
-                new Quantity(3.0, LengthUnit.FEET),
+                new Quantity(1.0, LengthUnit.FEET),
+                new Quantity(12.0, LengthUnit.INCH),
+                LengthUnit.INCH
+        ));
+
+        System.out.println(Quantity.add(
+                new Quantity(1.0, LengthUnit.FEET),
+                new Quantity(12.0, LengthUnit.INCH),
                 LengthUnit.YARD
+        ));
+
+        System.out.println(Quantity.add(
+                new Quantity(36.0, LengthUnit.INCH),
+                new Quantity(1.0, LengthUnit.YARD),
+                LengthUnit.FEET
         ));
 
         System.out.println(Quantity.add(
